@@ -1,498 +1,195 @@
-# index.html
-
-```html
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>الحزمة الذكية</title>
-
-<style>
-
-:root{
-  --bg:#0f172a;
-  --panel:#1e293b;
-  --text:#e5e7eb;
-  --accent:#38bdf8;
-  --gold:#facc15;
-}
-
-*{
-  box-sizing:border-box;
-}
-
-body{
-  margin:0;
-  font-family:Tahoma,Arial,sans-serif;
-  background:
-  radial-gradient(circle at top right,rgba(56,189,248,.15),transparent 35%),
-  linear-gradient(135deg,#020617,#0f172a 45%,#111827);
-  color:var(--text);
-  min-height:100vh;
-}
-
-header{
-  padding:60px 20px 30px;
-  text-align:center;
-}
-
-.badge{
-  display:inline-block;
-  padding:10px 16px;
-  border-radius:999px;
-  border:1px solid rgba(56,189,248,.25);
-  background:rgba(30,41,59,.8);
-  color:var(--accent);
-}
-
-h1{
-  font-size:clamp(28px,5vw,52px);
-  margin:20px auto;
-  max-width:900px;
-  line-height:1.4;
-}
-
-.lead{
-  max-width:850px;
-  margin:auto;
-  color:#94a3b8;
-  line-height:1.9;
-}
-
-.container{
-  width:min(1100px,94%);
-  margin:auto;
-  padding-bottom:60px;
-}
-
-.card{
-  background:linear-gradient(180deg,rgba(30,41,59,.96),rgba(15,23,42,.98));
-  border:1px solid rgba(148,163,184,.18);
-  border-radius:26px;
-  padding:24px;
-  margin-top:20px;
-}
-
-.card h2{
-  margin-top:0;
-}
-
-.prompt{
-  background:#020617;
-  border-radius:18px;
-  padding:18px;
-  line-height:1.9;
-  color:#dbeafe;
-}
-
-.placeholder{
-  color:var(--gold);
-  font-weight:900;
-}
-
-.copy{
-  width:100%;
-  margin-top:16px;
-  border:none;
-  border-radius:16px;
-  padding:15px;
-  background:linear-gradient(135deg,#38bdf8,#2563eb);
-  color:#00111f;
-  font-weight:900;
-  cursor:pointer;
-}
-
-.copy.done{
-  background:linear-gradient(135deg,#22c55e,#16a34a);
-  color:#fff;
-}
-
-/* =========================
-LICENSE MODAL
-========================= */
-
-.license-modal{
-  position:fixed;
-  inset:0;
-  z-index:999999;
-  background:
-    radial-gradient(circle at top right,
-    rgba(56,189,248,.16),
-    transparent 35%),
-    rgba(2,6,23,.96);
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  backdrop-filter:blur(18px);
-  padding:20px;
-}
-
-.license-box{
-  width:min(430px,100%);
-  background:linear-gradient(
-    180deg,
-    rgba(30,41,59,.98),
-    rgba(15,23,42,.98)
-  );
-
-  border:1px solid rgba(56,189,248,.25);
-
-  border-radius:30px;
-
-  padding:34px;
-
-  text-align:center;
-
-  box-shadow:
-    0 30px 80px rgba(0,0,0,.45),
-    0 0 40px rgba(56,189,248,.08);
-}
-
-.license-badge{
-  display:inline-block;
-
-  padding:8px 14px;
-
-  border-radius:999px;
-
-  background:rgba(56,189,248,.12);
-
-  border:1px solid rgba(56,189,248,.25);
-
-  color:#38bdf8;
-
-  font-size:12px;
-
-  margin-bottom:18px;
-
-  font-weight:700;
-
-  letter-spacing:1px;
-}
-
-.license-box h2{
-  margin:0 0 12px;
-  color:#fff;
-  font-size:30px;
-}
-
-.license-box p{
-  color:#94a3b8;
-  line-height:1.8;
-  margin-bottom:22px;
-}
-
-.license-box input{
-  width:100%;
-
-  padding:16px;
-
-  border-radius:18px;
-
-  border:1px solid rgba(148,163,184,.22);
-
-  background:#020617;
-
-  color:#fff;
-
-  font-size:16px;
-
-  outline:none;
-}
-
-.license-box button{
-  width:100%;
-
-  margin-top:16px;
-
-  padding:16px;
-
-  border:none;
-
-  border-radius:18px;
-
-  background:linear-gradient(
-    135deg,
-    #38bdf8,
-    #2563eb
-  );
-
-  color:#00111f;
-
-  font-weight:900;
-
-  font-size:16px;
-
-  cursor:pointer;
-}
-
-.watermark{
-  position:fixed;
-
-  bottom:16px;
-
-  left:16px;
-
-  z-index:99999;
-
-  background:rgba(15,23,42,.72);
-
-  border:1px solid rgba(250,204,21,.18);
-
-  color:rgba(250,204,21,.85);
-
-  padding:10px 14px;
-
-  border-radius:999px;
-
-  font-size:13px;
-
-  backdrop-filter:blur(12px);
-
-  pointer-events:none;
-}
-
-body::after{
-  content:attr(data-license);
-
-  position:fixed;
-
-  inset:0;
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  z-index:1;
-
-  pointer-events:none;
-
-  white-space:pre-wrap;
-
-  font-size:58px;
-
-  font-weight:900;
-
-  color:rgba(250,204,21,.03);
-
-  transform:rotate(-28deg);
-
-  text-align:center;
-
-  line-height:2;
-}
-
-@media(max-width:600px){
-
-  body::after{
-    font-size:34px;
-  }
-
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بوابة الروابط المدرسية</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Arabic Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Tajawal', sans-serif; }
+    </style>
 </head>
-<body>
-
-<header>
-  <span class="badge">SMART AI BUNDLE</span>
-
-  <h1>
-    الحزمة الذكية: أوامر احترافية لتأسيس وميكنة الأعمال بواسطة ChatGPT
-  </h1>
-
-  <p class="lead">
-    منتج رقمي تفاعلي يساعدك على بناء التسويق والإدارة والأتمتة باحترافية.
-  </p>
-</header>
-
-<div class="container">
-
-  <div class="card">
-    <h2>📢 مثال Prompt احترافي</h2>
-
-    <div class="prompt" id="p1">
-      تصرف كخبير تسويق استراتيجي.
-
-      أريد منك بناء خطة تسويق كاملة لمشروع يعمل في مجال
-      <span class="placeholder">[اكتب المتغير هنا]</span>
-
-      الجمهور المستهدف هو
-      <span class="placeholder">[اكتب المتغير هنا]</span>
-
-      والهدف التجاري هو
-      <span class="placeholder">[اكتب المتغير هنا]</span>
-
-      قدم:
-      
-      1- تحليل السوق
-      2- خطة محتوى
-      3- أفكار إعلانات
-      4- Funnel كامل
-      5- مؤشرات KPI
-    </div>
-
-    <button class="copy" onclick="copyPrompt('p1', this)">
-      نسخ الأمر
-    </button>
-
-  </div>
-
-</div>
-
-<!-- LICENSE -->
-
-<div id="licenseModal" class="license-modal">
-  <div class="license-box">
-
-    <div class="license-badge">
-      SMART LICENSE
-    </div>
-
-    <h2>تفعيل النسخة</h2>
-
-    <p>
-      هذه النسخة مخصصة للاستخدام الشخصي فقط.
-      <br>
-      سيتم ختم المنتج باسم المشتري.
-    </p>
-
-    <input
-      type="text"
-      id="buyerName"
-      placeholder="اكتب اسمك الكامل"
-    />
-
-    <button type="button" onclick="activateLicense()">
-      تفعيل المنتج
-    </button>
-
-  </div>
-</div>
-
-<div id="watermark" class="watermark"></div>
-
-<script>
-
-/* COPY */
-
-function copyPrompt(id,btn){
-
-  const text = document.getElementById(id).innerText;
-
-  navigator.clipboard.writeText(text).then(()=>{
-
-    btn.textContent='تم النسخ بنجاح ✓';
-
-    btn.classList.add('done');
-
-    setTimeout(()=>{
-
-      btn.textContent='نسخ الأمر';
-
-      btn.classList.remove('done');
-
-    },2000);
-
-  });
-
-}
-
-/* LICENSE */
-
-function activateLicense(){
-
-  const name = document.getElementById('buyerName').value.trim();
-
-  if(name.length < 3){
-
-    alert('الرجاء كتابة الاسم بشكل صحيح');
-
-    return;
-  }
-
-  const licenseText = `مرخص لـ: ${name}`;
-
-  try {
-
-    localStorage.setItem(
-      'smart_bundle_buyer',
-      name
-    );
-
-  } catch(e) {
-
-    console.log('storage disabled');
-
-  }
-
-  document.getElementById(
-    'licenseModal'
-  ).style.display='none';
-
-  document.getElementById(
-    'watermark'
-  ).textContent = licenseText;
-
-  document.body.setAttribute(
-    'data-license',
-
-    `${licenseText}\n\n${licenseText}`
-  );
-
-}
-
-window.addEventListener('load',()=>{
-
-  try {
-
-    const savedName = localStorage.getItem(
-      'smart_bundle_buyer'
-    );
-
-    if(savedName){
-
-      const licenseText = `مرخص لـ: ${savedName}`;
-
-      document.getElementById(
-        'licenseModal'
-      ).style.display='none';
-
-      document.getElementById(
-        'watermark'
-      ).textContent = licenseText;
-
-      document.body.setAttribute(
-        'data-license',
-
-        `${licenseText}\n\n${licenseText}`
-      );
-
-    }
-
-  } catch(e) {
-
-    console.log('storage unavailable');
-
-  }
-
-});
-
-/* DISABLE RIGHT CLICK */
-
-document.addEventListener(
-  'contextmenu',
-  e => e.preventDefault()
-);
-
-</script>
-
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- Header Section -->
+    <header class="bg-emerald-700 text-white shadow-lg border-b-4 border-emerald-900">
+        <div class="max-w-6xl mx-auto px-4 py-8 text-center">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-white/10 rounded-full mb-3 shadow-inner">
+                <i class="fa-solid fa-school text-3xl text-emerald-200"></i>
+            </div>
+            <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">بوابة الروابط والخدمات المدرسية</h1>
+            <p class="text-emerald-100 text-sm md:text-base mt-2 max-w-xl mx-auto opacity-90">
+                جميع الروابط المعتمدة والنماذج التنظيمية للمدرسة في مكان واحد
+            </p>
+        </div>
+    </header>
+
+    <!-- Search & Controls Container -->
+    <main class="max-w-6xl mx-auto px-4 py-8 flex-grow w-full">
+        <div class="bg-white rounded-2xl p-4 md:p-6 shadow-sm border border-slate-200 mb-8">
+            <div class="flex flex-col md:flex-row gap-4 items-center justify-between">
+                
+                <!-- Search Bar -->
+                <div class="relative w-full md:w-1/2">
+                    <span class="absolute inset-y-0 right-0 flex items-center pr-4 text-slate-400">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </span>
+                    <input type="text" id="searchInput" oninput="filterLinks()" 
+                        placeholder="ابحث عن رابط أو خدمة..." 
+                        class="w-full pr-11 pl-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:bg-white outline-none transition text-sm">
+                </div>
+
+                <!-- Categories Dropdown -->
+                <div class="w-full md:w-auto flex items-center gap-2 overflow-x-auto pb-2 md:pb-0" id="categoryButtons">
+                    <button onclick="selectCategory('all')" class="cat-btn active-cat bg-emerald-700 text-white px-4 py-2.5 rounded-xl text-sm font-bold whitespace-nowrap transition shadow-sm">
+                        الكل
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Links Grid Container -->
+        <div id="linksGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Loading Indicator -->
+            <div class="col-span-full text-center py-12">
+                <i class="fa-solid fa-spinner fa-spin text-3xl text-emerald-600"></i>
+                <p class="mt-3 text-slate-500 text-sm font-medium">جاري تحميل الروابط...</p>
+            </div>
+        </div>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="hidden text-center py-16 bg-white rounded-2xl border border-dashed border-slate-300 my-6">
+            <i class="fa-regular fa-folder-open text-4xl text-slate-300 mb-3"></i>
+            <h3 class="text-lg font-bold text-slate-600">لا توجد نتائج متطابقة</h3>
+            <p class="text-slate-400 text-sm mt-1">جرب البحث بكلمات أخرى أو اختر تصنيفاً مختلفاً</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-6 mt-12 text-center text-slate-500 text-xs">
+        <div class="max-w-6xl mx-auto px-4">
+            <p>© جميع الحقوق محفوظة - الإدارة المدرسية</p>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script>
+        let allLinks = [];
+        let currentCategory = 'all';
+
+        // Fetch Links from JSON
+        async function fetchLinks() {
+            try {
+                const response = await fetch('links.json');
+                if (!response.ok) throw new Error('فشل تحميل الملف');
+                allLinks = await response.json();
+                renderCategories();
+                renderLinks(allLinks);
+            } catch (error) {
+                console.error(error);
+                document.getElementById('linksGrid').innerHTML = `
+                    <div class="col-span-full text-center py-12 bg-red-50 text-red-600 rounded-xl border border-red-200">
+                        <i class="fa-solid fa-triangle-exclamation text-3xl mb-2"></i>
+                        <p class="font-bold">حدث خطأ في تحميل الروابط!</p>
+                        <p class="text-xs mt-1">تأكد من رفع ملف links.json في نفس مستودع GitHub</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Render Categories Dynamically
+        function renderCategories() {
+            const categories = ['all', ...new Set(allLinks.map(link => link.category))];
+            const container = document.getElementById('categoryButtons');
+            
+            container.innerHTML = categories.map(cat => {
+                const isAll = cat === 'all';
+                const label = isAll ? 'الكل' : cat;
+                return `
+                    <button onclick="selectCategory('${cat}')" 
+                        class="cat-btn ${isAll ? 'bg-emerald-700 text-white font-bold' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'} px-4 py-2.5 rounded-xl text-sm whitespace-nowrap transition shadow-sm">
+                        ${label}
+                    </button>
+                `;
+            }).join('');
+        }
+
+        // Render Links Cards
+        function renderLinks(links) {
+            const grid = document.getElementById('linksGrid');
+            const emptyState = document.getElementById('emptyState');
+
+            if (links.length === 0) {
+                grid.innerHTML = '';
+                emptyState.classList.remove('hidden');
+                return;
+            }
+
+            emptyState.classList.add('hidden');
+            grid.innerHTML = links.map(link => `
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md hover:-translate-y-1 transition duration-200 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-emerald-50 text-emerald-700 group-hover:bg-emerald-700 group-hover:text-white transition duration-200 text-xl">
+                                <i class="fa-solid ${link.icon || 'fa-link'}"></i>
+                            </span>
+                            <span class="text-xs font-semibold px-2.5 py-1 bg-slate-100 text-slate-500 rounded-md">
+                                ${link.category}
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-800 mb-2 group-hover:text-emerald-700 transition">
+                            ${link.title}
+                        </h3>
+                        <p class="text-slate-500 text-xs leading-relaxed mb-6">
+                            ${link.description || 'اضغط على الزر أدناه للانتقال للخدمة.'}
+                        </p>
+                    </div>
+                    <a href="${link.url}" target="_blank" rel="noopener noreferrer" 
+                       class="w-full text-center py-2.5 px-4 bg-slate-900 hover:bg-emerald-700 text-white font-bold text-sm rounded-xl transition flex items-center justify-center gap-2 shadow-sm">
+                       <span>الانتقال للرابط</span>
+                       <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                    </a>
+                </div>
+            `).join('');
+        }
+
+        // Filter Functionality
+        function filterLinks() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            
+            const filtered = allLinks.filter(link => {
+                const matchesSearch = link.title.toLowerCase().includes(searchTerm) || 
+                                      (link.description && link.description.toLowerCase().includes(searchTerm));
+                const matchesCategory = currentCategory === 'all' || link.category === currentCategory;
+                
+                return matchesSearch && matchesCategory;
+            });
+
+            renderLinks(filtered);
+        }
+
+        // Category Switcher
+        function selectCategory(category) {
+            currentCategory = category;
+            
+            // Update UI buttons
+            const buttons = document.querySelectorAll('.cat-btn');
+            buttons.forEach(btn => {
+                btn.className = 'cat-btn bg-slate-100 text-slate-600 hover:bg-slate-200 px-4 py-2.5 rounded-xl text-sm whitespace-nowrap transition shadow-sm';
+            });
+            event.target.className = 'cat-btn bg-emerald-700 text-white font-bold px-4 py-2.5 rounded-xl text-sm whitespace-nowrap transition shadow-sm';
+
+            filterLinks();
+        }
+
+        // Initialize
+        fetchLinks();
+    </script>
 </body>
 </html>
-```
-
