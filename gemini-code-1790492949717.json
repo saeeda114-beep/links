@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "title": "رصد السلوك المتميز",
+    "url": "https://example.com/behavior",
+    "category": "التوجيه والطلاب",
+    "icon": "fa-award",
+    "description": "نموذج ورابط رصد السلوكيات المتميزة والتعزيز للطلاب"
+  },
+  {
+    "id": "2",
+    "title": "رابط تقييم الأداء الوظيفي",
+    "url": "https://example.com/performance",
+    "category": "الشؤون الإدارية",
+    "icon": "fa-chart-line",
+    "description": "منظومة وتقييم الأداء الوظيفي لمنسوبي المدرسة"
+  },
+  {
+    "id": "3",
+    "title": "رابط مساءلة المعلمين",
+    "url": "https://example.com/questioning",
+    "category": "الشؤون الإدارية",
+    "icon": "fa-file-signature",
+    "description": "نموذج المساءلات والغياب والتأخر للكادر التعليمي"
+  },
+  {
+    "id": "4",
+    "title": "رابط تحويل طالب للوكيل",
+    "url": "https://example.com/refer-student",
+    "category": "التوجيه والطلاب",
+    "icon": "fa-user-gear",
+    "description": "نموذج تحويل ومتابعة المخالفات والملاحظات لوكيل الشؤون الطلابية"
+  },
+  {
+    "id": "5",
+    "title": "رابط إبداء ملاحظات أو رأي",
+    "url": "https://example.com/feedback",
+    "category": "التواصل والاقتراحات",
+    "icon": "fa-comment-dots",
+    "description": "صندوق واستبانة المقترحات والملاحظات لتطوير العمل"
+  }
+]
