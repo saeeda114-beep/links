@@ -38,5 +38,13 @@
     "category": "التواصل والاقتراحات",
     "icon": "fa-comment-dots",
     "description": "صندوق واستبانة المقترحات والملاحظات لتطوير العمل"
+  },
+   {
+    "id": "6",
+    "title": "رابط توثيق المبادرات",
+    "url": "https://asks4757.github.io/bosaad/",
+    "category": "المبادرات",
+    "icon": "fa-comment-dots",
+    "description": "نموذج تفاعلي لعمل تقارير المبادرات"
   }
 ]
