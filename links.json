@@ -41,10 +41,50 @@
   },
    {
     "id": "6",
-    "title": "رابط توثيق المبادرات",
-    "url": "https://asks4757.github.io/bosaad/",
+    "title": "نموذج تسجيل مبادرة - قبلي",
+    "url": "https://docs.google.com/forms/d/e/1FAIpQLScFYKeccDul1_DD55NyRYbTrSOduwidE95u54tICKaC0WGUcQ/viewform",
     "category": "المبادرات",
     "icon": "fa-comment-dots",
     "description": "نموذج تفاعلي لعمل تقارير المبادرات"
+  },
+   {
+    "id": "7",
+    "title": "نموذج قياس أثر مبادرة - بعدي",
+    "url": "https://docs.google.com/forms/d/e/1FAIpQLSfsv5cEPdPJjUeTR9GDyUfPrD591dUhOvjOqwxcGo9cfUEWKw/viewform",
+    "category": "المبادرات",
+    "icon": "fa-comment-dots",
+    "description": "نموذج تفاعلي لعمل تقارير المبادرات"
+  },
+   {
+    "id": "8",
+    "title": "نموذج توثيق تبادل الزيارات ونقل الخبرات",
+    "url": "https://docs.google.com/forms/d/e/1FAIpQLSdtPXCAikEeDfkgeljA-LRQItxHp6tqD-aE9_-12J_PW57OUA/viewform",
+    "category": "نقل الخبرات",
+    "icon": "fa-comment-dots",
+    "description": "تبادل الزيارات ونقل الخبرات"
+  },
+   {
+    "id": "9",
+    "title": "نموذج التطوير المهني والرخصة المهنية",
+    "url": "https://docs.google.com/forms/d/e/1FAIpQLSfyj_m75hFK4rHdP0PY7AvLL5RF9WoBx8Z-u_uj78y3w_I61A/viewform",
+    "category": "التطوير المهني والتدريب",
+    "icon": "fa-comment-dots",
+    "description": "التطوير المهني والرخصة المهنية"
+  },
+   {
+    "id": "10",
+    "title": "نموذج مجتمعات التعلم المهنية (PLC)",
+    "url": "https://docs.google.com/forms/d/e/1FAIpQLScsblj2BaPQYzjUrWCJI2C6G_5nQByux8Am_rTar3nH9RZImA/viewform",
+    "category": "التطوير المهني والتدريب",
+    "icon": "fa-comment-dots",
+    "description": "التطوير المهني والرخصة المهنية"
+  },
+   {
+    "id": "11",
+    "title": "نموذج توثيق الاستراتيجيات التعليمية",
+    "url": "https://docs.google.com/forms/d/e/1FAIpQLSdJiBQfS2anEBcQpC80-Y7awioaW62qT9fgDfNeOkFdUdnzHg/viewform",
+    "category": "الاستراتيجيات التعليمية",
+    "icon": "fa-comment-dots",
+    "description": "الاستراتيجيات التعليمية"
   }
 ]
